@@ -7,10 +7,14 @@
 <link rel="stylesheet" href="css/blueberry.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="js/jquery.blueberry.js"></script>
-
+<script src="js/smoothscroll.js"></script>
 <script>
 $(window).load(function(){
 	$('.blueberry').blueberry();
+});
+$('a[href*=#]').on('click', function(event){     
+    event.preventDefault();
+    $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
 });
 </script>
 
@@ -49,18 +53,22 @@ p{
 	padding: 1%;
 }
 
+img{
+	text-align: center;
+	max-width: 100%;
+	height: auto;
+	width: auto;
 
+}
 .icon{
-	max-width: 200px;
-	max-height: 150px;
 	border-radius: 50%;
 }
-
-img{ text-align: center;
-	max-width: 800px;
-	max-height: 300px;
+.service {
+    max-width: 600px;
+    max-height: 600px;
+    float: left;
+    margin-left: 30px;
 }
-
 a{
 	color: #FFF;
 	text-decoration: none;
@@ -74,7 +82,7 @@ a:hover{
 header{
    background: rgb(185, 122, 77);
    width: 100%;
-   height: 86px;
+   height: 50px;
    position: fixed;
    top: 0;
    left: 0;
@@ -83,22 +91,23 @@ header{
 }
 
 #logo{
-	margin: 20px;
+	margin: auto;
 	float: left;
-	width: 500px;
+	width: 400px;
 	height: 60px;
 	background: url('images/logo.png') no-repeat center;
 }
 nav{
-	float:right;
-	padding: 35px 20px 20px 0;
+	float: right;
+	padding: 10px 20px 20px 0;
 }
 
 #menu-icon{
 	display: hidden;
 	width: 40px;
 	height: 40px;
-	background: url('');
+	border-radius: 50%
+	background: url('images/iconn.png');
 }
 a:hover#menu-icon{
 	border-radius: 4px 4px 0 0;
@@ -127,7 +136,10 @@ nav ul li{
 	max-width: 1140px;
 	margin-top: 110px;
 }
-
+.slides img{
+	max-width: 960px;
+	max-height: 479px;
+}
 .blueberry{
 	max-width:960px;
 	margin-top: 110px;
@@ -154,12 +166,10 @@ article{
 
 aside{
 	float: right;
-	margin: 0 auto;
-	width: 35%;
-	height: auto;
-	padding: 3%;
+	
+	padding: 0px;
 }
-
+   
 ul.edu li{
 	padding-left: 3%;
 }
@@ -225,39 +235,27 @@ footer.second{
 		display: block;
 
 	}
-}
-section {
-	float: left;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
 
+	section {
+		float: left;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+}
 article {
 	float: left;
-	width: 100%;
+	display: inline;
+	
 	margin: 0;
 	padding: 0;
 }
 
 aside {
-	float: left;
-	width: 100%;
-	margin: 0;
-	padding: 0;
-}
-article img{
-	max-width: 800px;
-	max-height: 500px;
-}
-.features {
-
-	max-width: 250px;
-	max-height: 250px;
-}
-.social img{
-	max-width: 30px;
-	max-height: 30px;
+	float:right;
+	display: inline;
+	margin: 0px 100px 0px -1px;
+	padding-right: 100px;
 }
 </style>
 
@@ -269,11 +267,11 @@ article img{
 			<a href="#" id="menu-icon"></a>
 			<ul >
 				<li><a href="#" class="current">Home</a></li>
-				<li><a href="#" class="current">Educators</a></li>
-				<li><a href="#" class="current">Services</a></li>
-				<li><a href="#" class="current">About</a></li>
-				<li><a href="#" class="current">Gallery</a></li>
-				<li><a href="#" class="current">Connect with us</a></li>
+				<li><a href="#Educators">Educators</a></li>
+				<li><a href="#Services">Services</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#Gallery">Gallery</a></li>
+				<li><a href="#Connect with us">Connect with us</a></li>
 		</nav>
 	</header>
 	<div id="doc">
@@ -288,55 +286,65 @@ article img{
 			</div>
 		</div>
 	</div>
+	<div id="Educators">
 	<section>
 		<img class="icon" src="images/teacher.jpg"  />
 		<h1>Learn with Best Educators</h1>
-		<p>Lorem Ipsum</p>
+		<p>We have hired the best and most proficient trainers in the industry to train well. Our Educators not only understand the need of students but also the approach that varies acording to the students level of understanding</p>
 	</section>
+
 	<section>
 		<img class="icon" src="images/location.jpg"/>
 		<h1>Locate easily</h1>
-		<p>Lorem Ipsum</p>
+		<p>We are spread over 20 cities all over the continent with our headquarters in Melbourne district. We can easily be reach out from any part of the city and also can be contacted any time anywhere.</p>
 	</section>
+
 	<section>
 		<img class="icon" src="images/free-demo.jpg"/>
 		<h1>Free Demo Class</h1>
-		<p>Lorem Ipsum</p>
+		<p>Tofu meditation banjo drinking vinegar 3 wolf moon bespoke 8-bit bushwick. Gentrify thundercats tofu, 3 wolf moon schlitz tattooed viral hella fanny pack kinfolk aesthetic umami authentic salvia polaroid. Tacos . </p>
 	</section>
-
+	</div>
 	<div class="clear">
 	</div>
+
+	<div id="Services">
 	<article>
-		<img src="images/school.jpg"/>
+		<img class="service" src="images/school.jpg"/>
 	</article>
 	<aside>
-	<h2>Our Group Class Schedule</h2>
+	<h2>Our       Group       Class       Schedule     </h2>
 		<ul class="edu">
-			<li><h3>English Proficiency Class at 8:00 a.m. - 60 minutes</h3></li>
-			<li><h3>Mathematics basics at 12:00 p.m. - 30 minutes</h3></li>
-			<li><h3>Advanced Biology at 10:00 a.m. - 30 minutes</h3></li>
-			<li><h3>Chemistry Learning at 2:00 p.m. - 30 minutes</h3></li>
+			<li><h3>English Proficiency Class at 8:00 a.m. - 60 minutes</h3></li><br><br>
+			<li><h3>Mathematics basics at 12:00 p.m. - 30 minutes</h3></li><br><br>
+			<li><h3>Advanced Biology at 10:00 a.m. - 30 minutes</h3></li><br><br>
+			<li><h3>Chemistry Learning at 2:00 p.m. - 30 minutes</h3></li><br><br>
 			<li><h3>Physics at 4 p.m. - 60 minutes</h3></li>
 		</ul>
 	</aside>
+	
+	</div>
 	<div class="clear">
 	</div>
-	<section>
-		<h1>Fully Ventilated Classrooms</h1>
-		<img class="features" src="images/classroom.jpg"/>
-		<p>Lorem Ipsum</p>
-	</section>
-	<section>
-		<h1>Computer Labs</h1>
-		<img class="features" src="images/c-lab.jpg"/>
-		<p>Lorem Ipsum</p>
-	</section>
-	<section>
-		<h1>Free Wifi-enabled Library</h1>
-		<img class="features" src="images/library.jpg"/>
-		<p>Lorem Ipsum</p>
-	</section>
+	<div id="Gallery">
+		<section>
+			<h1>Fully Ventilated Classrooms</h1>
+			<img class="features" src="images/classroom.jpg"/>
+			<p>Roof party normcore keytar, green juice fashion axe aesthetic slow-carb locavore everyday carry taxidermy. Retro yr four dollar toast, roof party literally jean shorts pop-up. Cornhole locavore slow-carb gochujang taxidermy. Narwhal slow-carb direct trade, man bun selfies yuccie ugh banjo migas skateboard literally humblebrag.</p>
+		</section>
+		<section>
+			<h1>Computer Labs</h1>
+			<img class="features" src="images/c-lab.jpg"/>
+			<p>Quinoa distillery ramps, umami beard helvetica lumbersexual lo-fi photo booth celiac yuccie post-ironic intelligentsia salvia VHS. Green juice selvage you probably haven't heard of them, hoodie pop-up +1 poutine dreamcatcher ethical brooklyn.</p>
+		</section>
+		<section>
+			<h1>Free Wifi-enabled Library</h1>
+			<img class="features" src="images/library.jpg"/>
+			<p>Vinyl tattooed green juice craft beer raw denim, ugh small batch crucifix. Semiotics thundercats franzen, health goth gochujang dreamcatcher put a bird on it keytar slow-carb man bun cornhole tumblr affogato letterpress. Blog twee lumbersexual, post-ironic shabby chic tumblr health goth umami taxidermy cray. IPhone XOXO tousled, keytar selfies leggings truffaut. </p>
+		</section>
+	</div>
 	<footer>
+	<div id="Connect With Us">
 		<section>
 			<h3> The Educatio Centre</h3>
 			<p><b>666-555-444</b><br><br>
@@ -355,6 +363,7 @@ article img{
 		<section>
 			<img src="images/studys.png"/>
 		</section>
+	</div>
 	</footer>
 	<footer class="second">
 		<p>Copyright The Education Centre 2015</p>
