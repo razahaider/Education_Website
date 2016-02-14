@@ -2,16 +2,19 @@
 	margin: 0;
 	border: 0;
 	padding: 0;
+
 }
 
 body{
 	background: #f0f0f0;
-	font: 14px/20px Arial, Sans-Serif;
+	font: 14px/20px;
+	font-family: 'Titillium Web', sans-serif;
 	color: #555;
 	margin: 0;
-
+	text-shadow: ;
 }
 h1{
+	text-shadow: 1px 1px 1px #212121;
 	text-align: center;
 	font-size: 180%;
 	line-height: 120%;
@@ -43,10 +46,11 @@ img{
 	border-radius: 50%;
 }
 .service {
-    max-width: 600px;
-    max-height: 600px;
+    max-width: 500px;
+    height: 400px;
     float: left;
-    margin-left: 30px;
+    margin-left: 150px;
+    padding-right: 50px;
 }
 .social img{
 	border-radius: 50%;
@@ -99,6 +103,7 @@ ul{
 }
 
 nav ul li{
+	text-shadow: 1px 1px 1px #212121;
 	display: inline-block;
 	float: left;
 	padding: 10px;
